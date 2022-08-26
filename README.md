@@ -1,6 +1,6 @@
 # bmstu_iu9
 
-Computer subjects, which I learn:
+Computer subjects:
 
 1 semester:
   Informatics Basics
