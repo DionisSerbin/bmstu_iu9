@@ -1,0 +1,7 @@
+S -> aT
+S -> aD
+T -> abF
+F -> Tab
+T -> ab
+D -> a
+D ->   bDb

@@ -1,0 +1,3 @@
+X = (a|b)X+bY+aab
+Y=bZ + a
+Z = aZ+a
