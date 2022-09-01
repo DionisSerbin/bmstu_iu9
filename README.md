@@ -2,9 +2,9 @@
 
 Computer subjects:
 
-1 semester:
-  Informatics Basics
-  Algorithms and Data Structures
+1 semester:  
+  Informatics Basics  
+  Algorithms and Data Structures  
 
 2 semester:
   Languages and Techniques Programming
