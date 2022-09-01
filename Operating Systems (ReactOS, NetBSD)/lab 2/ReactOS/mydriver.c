@@ -15,7 +15,7 @@ NTSTATUS NTAPI DriverEntry(IN PDRIVER_OBJECT DriverObject, IN PUNICODE_STRING Re
     	PVOID Addr = NULL;
     	PSYSTEM_PROCESS_INFORMATION ProcessInformation = NULL;
 	DriverObject->DriverUnload = BeepUnload;
-        DPRINT1("Driver George Ivanov has been uploaded\n");
+        DPRINT1("Driver Serbin Denis has been uploaded\n");
 	DPRINT1("Trying to get list of processes\n");
     	ZwAllocateVirtualMemory(NtCurrentProcess(),&Addr,0,&Size,MEM_RESERVE,PAGE_READWRITE);
     	Size = PAGE_SIZE * 5;
