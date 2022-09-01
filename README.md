@@ -11,8 +11,8 @@ Computer subjects:
   Discrete Math  
     
 3 semester:  
-  Computer Networks  
-  Low-level programming  
+    Computer Networks  
+    Low-level programming  
     
 4 semester:  
   Algorithms of computer graphics  
