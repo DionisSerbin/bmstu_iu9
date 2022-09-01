@@ -1,0 +1,12 @@
+non-terminal S, DN, DT, RLST, NLST, TLST, RLST, R, RE, RE1, P;
+terminal 'non-terminal', 'terminal', '+', '-', '*', '/', '(', ')', net, term, ';', ',', '|', '::=', '?' ;
+S ::= DN DT RLST* ;
+DN ::= 'non-terminal' net NLST* ';' ;
+NLST ::= ',' net ;
+DT ::= 'terminal' term TLST* ';' ;
+TLST ::= ',' term ;
+RLST ::= net '::=' R* ';' ;
+R ::= RE ('|' R)* ;
+RE ::= ( net | term | P ) RE1 ;
+RE1 ::= ( '*' | '?' | '+' )? RE ;
+P ::= '(' R ')' ;
