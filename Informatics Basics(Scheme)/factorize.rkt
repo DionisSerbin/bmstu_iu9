@@ -1,0 +1,22 @@
+(define (factorize exp)
+  (cond ((and
+          (equal? (car exp) '-)
+          (equal? (caadr exp) 'expt)
+          (equal? (caaddr exp) 'expt)
+          (equal? (car (cddadr exp)) '2)
+          (equal? (cadr (cdaddr exp)) '2))
+         (list '* (list '- (cadadr exp) (car (cdaddr exp)))  (list '+ (cadadr exp) (car (cdaddr exp)))))
+        ((and
+          (equal? (car exp) '-)
+          (equal? (caadr exp) 'expt)
+          (equal? (caaddr exp) 'expt)
+          (equal? (car (cddadr exp)) '3)
+          (equal? (cadr (cdaddr exp)) '3))
+         (list '* (list '- (cadadr exp) (car (cdaddr exp)))  (list '+ (list 'expt (cadadr exp) 2) (list '* (cadadr exp) (car (cdaddr exp))) (list 'expt (car (cdaddr exp)) 2)) ))
+        ((and
+          (equal? (car exp) '+)
+          (equal? (caadr exp) 'expt)
+          (equal? (caaddr exp) 'expt)
+          (equal? (car (cddadr exp)) '3)
+          (equal? (cadr (cdaddr exp)) '3))
+         (list '* (list '+ (cadadr exp) (car (cdaddr exp)))  (list '- (list '+ (list 'expt (cadadr exp) 2) (list 'expt (car (cdaddr exp)) 2)) (list '* (cadadr exp) (car (cdaddr exp))) )))))

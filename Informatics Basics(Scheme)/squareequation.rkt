@@ -1,0 +1,12 @@
+(define (squareequation a b c)
+  (define (square x) (* x x))
+  (define D 0)
+  (set! D (- (square b) (* 4 a c)))
+  (cond
+    ((and(= b 0 ) (= c 0)) '(0))
+    ((and (= b 0) (< c 0)) (list (sqrt(/(* c -1) a)) (*(sqrt(/ (* c -1) a)) -1)))
+    ((and (= b 0) (> c 0)) '())
+    ((= c 0) (list (/ (* b -1) a) 0))
+    ((< D 0) '())
+    ((= D 0) '(/ (* b -1) (* 2 a)))
+    ((> D 0) (list (/ (+(* b -1) (sqrt D)) (* 2 a)) (/ (-(* b -1) (sqrt D)) (* 2 a))))))

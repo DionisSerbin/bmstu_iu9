@@ -1,0 +1,11 @@
+(define (find x xs) 
+  (and (not(null? xs) )
+       (or (= (car xs) x) 
+           (find x (cdr xs)) ) ) ) 
+(define (union xs ys)
+    (if (null? xs) 
+        ys 
+        (if (find (car xs) ys) 
+            (union (cdr xs) ys) 
+            (union (cdr xs) (cons (car xs) ys)) ) ) ) 
+(union '(1 2 3 6) '( 2 3 4 5))

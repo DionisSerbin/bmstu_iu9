@@ -1,0 +1,13 @@
+(define (find x xs) 
+  (and (not(null? xs) )
+       (or (= (car xs) x) 
+           (find x (cdr xs)) ) ) ) 
+(define (intersection xs ys)
+ (define (intsect xs ys zs) 
+    (if (null? xs) 
+        zs 
+        (if (find (car xs) ys) 
+            (intsect (cdr xs) ys (cons (car xs) zs)) 
+            (intsect (cdr xs) ys zs) ) ) )
+  (intsect xs ys '()))
+(intersection '(1 2 3) '(2 3 4))

@@ -1,0 +1,15 @@
+(define (my-fold-left op xs)
+  (define (my-fold-left2 op ans xs)
+    (if (null? xs)
+        ans
+        (my-fold-left2 op (op ans (car xs)) (cdr xs) ) ) )
+  (if (null? xs)
+      '()
+      (my-fold-left2 op (car xs) (cdr xs) ) ) )
+
+(define (my-fold-right op xs) 
+  (if (null? (cdr (cdr xs) ) ) 
+      (op (car xs) (car (cdr xs))) 
+      (op (car xs) (my-fold-right op (cdr xs) ) ) )  )
+(my-fold-left quotient '(16 2 2 2 2 ))
+(my-fold-right expt '(2 3 4))

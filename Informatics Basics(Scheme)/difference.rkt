@@ -1,0 +1,13 @@
+(define (find x xs) 
+  (and (not(null? xs) )
+       (or (= (car xs) x) 
+           (find x (cdr xs)) ) ) ) 
+(define (difference xs ys)
+  (define (diff xs ys zs)
+  (if (null? xs) 
+      zs 
+     (if (find (car xs) ys) 
+            (diff (cdr xs) ys zs) 
+            (diff (cdr xs) ys (cons (car xs) zs)) ) ) )
+  (diff xs ys '()))
+(difference '(1 2 3 4 5) '(2 3))

@@ -1,0 +1,13 @@
+(define (find x xs) 
+  (and (not(null? xs) )
+       (or (= (car xs) x) 
+           (find x (cdr xs)) ) ) ) 
+
+(define (set? xs) 
+  (define (set2 xs ans) 
+    (or (null? xs) 
+         (and (not (find (car xs) ans))
+              (set2 (cdr xs) (cons (car xs) ans) ) ) ) ) 
+  (set2 xs '())  )
+(set? '(1 2 3))
+(set? '(1 2 3 3))

@@ -1,0 +1,13 @@
+(define (read-word)
+  (define (subread word)
+    (let ((prechar (read-char)))
+    (cond
+      ((or (equal? prechar #\newline) (equal? prechar #\space)) (if (= (string-length word) 0)
+                                                                        (subread "")
+                                                                        (cons word (subread ""))))
+      ((eof-object? prechar) (if (= (string-length word) 0)
+                                   '()
+                                   (cons word '())))
+       (else (subread (string-append word (string prechar)))))))
+  (subread ""))
+(read-word)
