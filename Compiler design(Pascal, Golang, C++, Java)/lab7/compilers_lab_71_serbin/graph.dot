@@ -1,0 +1,259 @@
+digraph {
+1 [label="S"][color=black]
+2 [label="DEF"][color=black]
+3 [label="D_N"][color=black]
+4 [label="Token NONTERMINALSIGN (2, 1)-(2, 13) <non-terminal>"][color=red]
+3->4
+5 [label="Token N (2, 14)-(2, 15) <E>"][color=red]
+3->5
+6 [label="N_LST"][color=black]
+7 [label="Token COMMA (2, 15)-(2, 16) <,>"][color=red]
+6->7
+8 [label="Token N (2, 17)-(2, 19) <E1>"][color=red]
+6->8
+9 [label="N_LST"][color=black]
+10 [label="Token COMMA (2, 19)-(2, 20) <,>"][color=red]
+9->10
+11 [label="Token N (2, 21)-(2, 22) <T>"][color=red]
+9->11
+12 [label="N_LST"][color=black]
+13 [label="Token COMMA (2, 22)-(2, 23) <,>"][color=red]
+12->13
+14 [label="Token N (2, 24)-(2, 26) <T1>"][color=red]
+12->14
+15 [label="N_LST"][color=black]
+16 [label="Token COMMA (2, 26)-(2, 27) <,>"][color=red]
+15->16
+17 [label="Token N (2, 28)-(2, 29) <F>"][color=red]
+15->17
+18 [label="N_LST"][color=black]
+15->18
+12->15
+9->12
+6->9
+3->6
+19 [label="Token COLON (2, 29)-(2, 30) <;>"][color=red]
+3->19
+2->3
+20 [label="D_T"][color=black]
+21 [label="Token TERMINALSIGN (3, 1)-(3, 9) <terminal>"][color=red]
+20->21
+22 [label="Token T (3, 10)-(3, 13) <'+'>"][color=red]
+20->22
+23 [label="T_LST"][color=black]
+24 [label="Token COMMA (3, 13)-(3, 14) <,>"][color=red]
+23->24
+25 [label="Token T (3, 15)-(3, 18) <'*'>"][color=red]
+23->25
+26 [label="T_LST"][color=black]
+27 [label="Token COMMA (3, 18)-(3, 19) <,>"][color=red]
+26->27
+28 [label="Token T (3, 20)-(3, 23) <'('>"][color=red]
+26->28
+29 [label="T_LST"][color=black]
+30 [label="Token COMMA (3, 23)-(3, 24) <,>"][color=red]
+29->30
+31 [label="Token T (3, 25)-(3, 28) <')'>"][color=red]
+29->31
+32 [label="T_LST"][color=black]
+33 [label="Token COMMA (3, 28)-(3, 29) <,>"][color=red]
+32->33
+34 [label="Token T (3, 30)-(3, 31) <n>"][color=red]
+32->34
+35 [label="T_LST"][color=black]
+32->35
+29->32
+26->29
+23->26
+20->23
+36 [label="Token COLON (3, 31)-(3, 32) <;>"][color=red]
+20->36
+2->20
+1->2
+37 [label="R_LST"][color=black]
+38 [label="R"][color=black]
+39 [label="Token N (6, 1)-(6, 2) <E>"][color=red]
+38->39
+40 [label="Token EQSIGN (6, 3)-(6, 6) <::=>"][color=red]
+38->40
+41 [label="E"][color=black]
+42 [label="SYM"][color=black]
+43 [label="Token N (6, 7)-(6, 8) <T>"][color=red]
+42->43
+41->42
+44 [label="SYM_LST"][color=black]
+45 [label="SYM"][color=black]
+46 [label="Token N (6, 9)-(6, 11) <E1>"][color=red]
+45->46
+44->45
+47 [label="SYM_LST"][color=black]
+44->47
+41->44
+38->41
+48 [label="E_LST"][color=black]
+38->48
+49 [label="Token COLON (6, 11)-(6, 12) <;>"][color=red]
+38->49
+37->38
+50 [label="R_LST"][color=black]
+51 [label="R"][color=black]
+52 [label="Token N (7, 1)-(7, 3) <E1>"][color=red]
+51->52
+53 [label="Token EQSIGN (7, 4)-(7, 7) <::=>"][color=red]
+51->53
+54 [label="E"][color=black]
+55 [label="SYM"][color=black]
+56 [label="Token T (7, 8)-(7, 11) <'+'>"][color=red]
+55->56
+54->55
+57 [label="SYM_LST"][color=black]
+58 [label="SYM"][color=black]
+59 [label="Token N (7, 12)-(7, 13) <T>"][color=red]
+58->59
+57->58
+60 [label="SYM_LST"][color=black]
+61 [label="SYM"][color=black]
+62 [label="Token N (7, 14)-(7, 16) <E1>"][color=red]
+61->62
+60->61
+63 [label="SYM_LST"][color=black]
+60->63
+57->60
+54->57
+51->54
+64 [label="E_LST"][color=black]
+65 [label="Token ORSIGN (7, 17)-(7, 18) <|>"][color=red]
+64->65
+66 [label="E"][color=black]
+67 [label="Token EPSILON (7, 19)-(7, 26) <epsilon>"][color=red]
+66->67
+64->66
+68 [label="E_LST"][color=black]
+64->68
+51->64
+69 [label="Token COLON (7, 26)-(7, 27) <;>"][color=red]
+51->69
+50->51
+70 [label="R_LST"][color=black]
+71 [label="R"][color=black]
+72 [label="Token N (8, 1)-(8, 2) <T>"][color=red]
+71->72
+73 [label="Token EQSIGN (8, 3)-(8, 6) <::=>"][color=red]
+71->73
+74 [label="E"][color=black]
+75 [label="SYM"][color=black]
+76 [label="Token N (8, 7)-(8, 8) <F>"][color=red]
+75->76
+74->75
+77 [label="SYM_LST"][color=black]
+78 [label="SYM"][color=black]
+79 [label="Token N (8, 9)-(8, 11) <T1>"][color=red]
+78->79
+77->78
+80 [label="SYM_LST"][color=black]
+77->80
+74->77
+71->74
+81 [label="E_LST"][color=black]
+71->81
+82 [label="Token COLON (8, 11)-(8, 12) <;>"][color=red]
+71->82
+70->71
+83 [label="R_LST"][color=black]
+84 [label="R"][color=black]
+85 [label="Token N (9, 1)-(9, 3) <T1>"][color=red]
+84->85
+86 [label="Token EQSIGN (9, 4)-(9, 7) <::=>"][color=red]
+84->86
+87 [label="E"][color=black]
+88 [label="SYM"][color=black]
+89 [label="Token T (9, 8)-(9, 11) <'*'>"][color=red]
+88->89
+87->88
+90 [label="SYM_LST"][color=black]
+91 [label="SYM"][color=black]
+92 [label="Token N (9, 12)-(9, 13) <F>"][color=red]
+91->92
+90->91
+93 [label="SYM_LST"][color=black]
+94 [label="SYM"][color=black]
+95 [label="Token N (9, 14)-(9, 16) <T1>"][color=red]
+94->95
+93->94
+96 [label="SYM_LST"][color=black]
+93->96
+90->93
+87->90
+84->87
+97 [label="E_LST"][color=black]
+98 [label="Token ORSIGN (9, 17)-(9, 18) <|>"][color=red]
+97->98
+99 [label="E"][color=black]
+100 [label="Token EPSILON (9, 19)-(9, 26) <epsilon>"][color=red]
+99->100
+97->99
+101 [label="E_LST"][color=black]
+97->101
+84->97
+102 [label="Token COLON (9, 26)-(9, 27) <;>"][color=red]
+84->102
+83->84
+103 [label="R_LST"][color=black]
+104 [label="R"][color=black]
+105 [label="Token N (10, 1)-(10, 2) <F>"][color=red]
+104->105
+106 [label="Token EQSIGN (10, 3)-(10, 6) <::=>"][color=red]
+104->106
+107 [label="E"][color=black]
+108 [label="SYM"][color=black]
+109 [label="Token T (10, 7)-(10, 8) <n>"][color=red]
+108->109
+107->108
+110 [label="SYM_LST"][color=black]
+107->110
+104->107
+111 [label="E_LST"][color=black]
+112 [label="Token ORSIGN (10, 9)-(10, 10) <|>"][color=red]
+111->112
+113 [label="E"][color=black]
+114 [label="SYM"][color=black]
+115 [label="Token T (10, 11)-(10, 14) <'('>"][color=red]
+114->115
+113->114
+116 [label="SYM_LST"][color=black]
+117 [label="SYM"][color=black]
+118 [label="Token N (10, 15)-(10, 16) <E>"][color=red]
+117->118
+116->117
+119 [label="SYM_LST"][color=black]
+120 [label="SYM"][color=black]
+121 [label="Token T (10, 17)-(10, 20) <')'>"][color=red]
+120->121
+119->120
+122 [label="SYM_LST"][color=black]
+119->122
+116->119
+113->116
+111->113
+123 [label="E_LST"][color=black]
+111->123
+104->111
+124 [label="Token COLON (10, 20)-(10, 21) <;>"][color=red]
+104->124
+103->104
+125 [label="R_LST"][color=black]
+103->125
+83->103
+70->83
+50->70
+37->50
+1->37
+126 [label="AXIOM"][color=black]
+127 [label="Token AXIOMSIGN (12, 1)-(12, 6) <axiom>"][color=red]
+126->127
+128 [label="Token N (12, 7)-(12, 8) <E>"][color=red]
+126->128
+131 [label="Token $ (12, 9)-(12, 9) <>"][color=red]
+126->131
+1->126
+}

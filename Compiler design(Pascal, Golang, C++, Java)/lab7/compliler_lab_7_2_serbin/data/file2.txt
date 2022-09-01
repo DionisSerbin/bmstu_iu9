@@ -1,0 +1,16 @@
+non-terminal S, DEF, DN, NLST, DT, TLST, RLST, R, ELST, E, SYMLST, SYM, AXIOM;
+terminal 'terminal', 'non-terminal', ';', ',', '::=', 'epsilon', '|', 'N', 'T', 'axiom';
+S ::= DEF RLST AXIOM;
+DEF ::= DN DT;
+DN ::= 'non-terminal' 'N' NLST ';';
+NLST ::= ',' 'N' NLST | epsilon;
+DT ::= 'terminal' 'T' TLST ';';
+TLST ::= ',' 'T' TLST | epsilon;
+RLST ::= R RLST | epsilon;
+R ::= 'N' '::=' E ELST ';';
+ELST ::= '|' E ELST | epsilon;
+E ::= SYM SYMLST | 'epsilon';
+SYMLST ::= SYM SYMLST | epsilon;
+SYM ::= 'N' | 'T';
+AXIOM ::= 'axiom' 'N' ';';
+axiom S;

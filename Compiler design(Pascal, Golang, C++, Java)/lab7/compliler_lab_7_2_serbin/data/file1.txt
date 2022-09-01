@@ -1,0 +1,7 @@
+non-terminal E, T, T1, F;
+terminal '+', '*', '(', ')', n;
+E ::= T;
+T ::= F T1;
+T1 ::= '*' F T1 | epsilon;
+F ::= n | '(' E ')';
+axiom E;

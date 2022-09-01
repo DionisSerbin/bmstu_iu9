@@ -1,0 +1,67 @@
+/*Синтаксис*/
+
+S ::= DEF R_LST AXIOM
+DEF ::= D_N D_T
+D_N ::= "non-terminal" N N_LST ';'
+N_LST ::= ',' N N_LST | eps
+D_T ::= "terminal" T T_LST ';'
+T_LST ::= ',' T T_LST | eps
+R_LST ::= R R_LST | eps
+R ::= N "::=" E E_LST ';'
+E_LST ::= '|' E E_LST | eps
+E ::= SYM SYM_LST | "epsilon"
+SYM_LST ::= SYM SYM_LST | eps
+SYM ::= N | T
+AXIOM ::= "axiom" N N_LST ';'
+N ::= "[A-Z]+1?"
+T ::= "\'(*|+|(|))\'|[a-z]"
+
+/*Лексическая структура*/
+
+WS_CHAR ::= ' ' | '\n' | '\t' | '\r' | eps
+WS      ::= WS_CHAR WS | eps
+CHAR   ::= ('a' | ... | 'z') | \'('*' | '+' | '-' | '(' | ')')\'
+LETTER ::= 'A' | ... | 'Z'
+LETTER_LST ::= LETTER LETTER_LST | eps
+SUFFIX ::= '1' | eps
+N  ::= LETTER LETTER_LST SUFFIX
+T  ::= CHAR
+
+AXIOM ::= "axiom" N N_LST ';'
+SYM ::= N | T
+SYM_LST ::= SYM SYM_LST | eps
+E ::= SYM SYM_LST | "epsilon"
+E_LST ::= '|' E E_LST | eps
+R ::= N "::=" E E_LST ';'
+R_LST ::= R R_LST | eps
+T_LST ::= ',' T T_LST | eps
+D_T ::= "terminal" T T_LST ';'
+N_LST ::= ',' N N_LST | eps
+D_N ::= "non-terminal" N N_LST ';'
+DEF ::= D_N D_T
+S ::= DEF R_LST AXIOM
+
+/*Грамматика*/
+
+WS_CHAR ::= ' ' | '\n' | '\t' | '\r' | eps
+WS      ::= WS_CHAR WS | eps
+CHAR   ::= ('a' | ... | 'z') | \'('*' | '+' | '-' | '(' | ')')\'
+LETTER ::= 'A' | ... | 'Z'
+LETTER_LST ::= LETTER LETTER_LST | eps
+SUFFIX ::= '1' | eps
+N  ::= LETTER LETTER_LST SUFFIX WS
+T  ::= CHAR WS
+
+AXIOM ::= "axiom" WS N N_LST ';'
+SYM ::= N WS | T WS
+SYM_LST ::= SYM SYM_LST | eps
+E ::= SYM SYM_LST | "epsilon"
+E_LST ::= '|' E E_LST | eps
+R ::= N WS "::=" WS E E_LST ';' WS
+R_LST ::= R R_LST | eps
+T_LST ::= ',' WS T T_LST | eps
+D_T ::= "terminal" WS T T_LST ';'
+N_LST ::= ',' WS N N_LST | eps
+D_N ::= "non-terminal" WS N N_LST ';'
+DEF ::= D_N D_T
+S ::= DEF R_LST AXIOM

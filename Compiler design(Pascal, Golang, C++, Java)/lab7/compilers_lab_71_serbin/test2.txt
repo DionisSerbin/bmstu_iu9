@@ -1,0 +1,8 @@
+non-terminal ADA, ADA1, CCC, CCC1, EEE;
+terminal '%', '/', '-', n, z;
+ADA ::= CCC1 | EEE '%' ADA1;
+CCC1 ::= n | CCC | epsilon;
+EEE ::= n '/' z | epsilon;
+ADA1 ::= EEE '-' z;
+CCC ::= z '%' z| epsilon;
+axiom ADA;
