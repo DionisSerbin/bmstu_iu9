@@ -1,8 +1,32 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>URL</key>
-	<string>https://github.com/Praepostor-IU9/IU9_Server/blob/master/Server/Semestr_1/Modul_1/05/main.c</string>
-</dict>
-</plist>
+
+#include <stdio.h>
+
+int main()
+{
+    long long s1 = 0, s2 = 0, p1 = 1, p2 = 1, k1 = 0, k2 = 0, c, i;
+    for (i = 0; i < 8; i++)
+    {
+        scanf("%lli", &c);
+        if (c != 0)
+        {
+            p1 *= c;
+            s1 += c;
+        }
+        else k1 += 1;
+    }
+    for (i = 0; i < 8; i++)
+    {
+        scanf("%lli", &c);
+        if (c != 0)
+        {
+            p2 *= c;
+            s2 += c;
+        }
+        else k2 += 1;
+    }
+    if ((s1 == s2) & (p1 == p2) & (k1 == k2))
+        printf("yes");
+    else printf("no");
+    return 0;
+}
+

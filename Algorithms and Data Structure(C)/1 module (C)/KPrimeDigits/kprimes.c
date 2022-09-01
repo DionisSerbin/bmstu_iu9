@@ -1,8 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>URL</key>
-	<string>https://github.com/not-Whale/bmstu-iu9/blob/master/Algorithms%20and%20data%20structures/C/Module%201/kprimes.c</string>
-</dict>
-</plist>
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    short k;
+    int n;
+    scanf ("%hd %d", &k, &n);
+    char arr[n+1];
+    for (int i=0; i<=n; i++)
+    {
+        arr[i] = 1;
+    }
+    for (int j=2; j*j<=n; j++)
+    {
+        for (int k=j*j; k<=n; k+=j)
+        {
+            arr[k] = arr[j] + arr[k/j];
+        }
+    }
+    for (int i=2; i<=n; i++)
+    {
+        if (arr[i] == k) printf ("%d ", i);
+    }
+    return 0;
+}

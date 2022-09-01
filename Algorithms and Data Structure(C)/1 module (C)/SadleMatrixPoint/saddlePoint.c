@@ -1,8 +1,31 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>URL</key>
-	<string>https://github.com/Praepostor-IU9/IU9_Server/blob/master/Server/Semestr_1/Modul_1/08/main.c</string>
-</dict>
-</plist>
+
+#include <stdio.h>
+#include <limits.h>
+
+int main()
+{
+    int i, j, n, m;
+    scanf("%i%i", &n, &m);
+    int a[10][10] = {{0}};
+    for (i = 0; i < n; i++)
+        for (j = 0; j < m; j++)
+            scanf("%i", &a[i][j]);
+    int max[10] = {0}, min[10] = {0};
+    for (j = 0; j < m; j++)
+        min[j] = INT_MAX;
+    for (i = 0; i < n; i++)
+        for (j = 0; j < m; j++)
+            {
+                if (a[i][j] > max[i]) max[i] = a[i][j];
+                if (a[i][j] < min[j]) min[j] = a[i][j];
+            }
+    for (i = 0; i < n; i++)
+        for (j = 0; j < m; j++)
+            if (max[i] == min[j])
+            {
+                printf("%i %i", i, j);
+                return 0;
+            }
+    printf("none");
+    return 0;
+}

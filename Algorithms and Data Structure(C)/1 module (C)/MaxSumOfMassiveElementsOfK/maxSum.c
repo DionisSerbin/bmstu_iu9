@@ -1,8 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>URL</key>
-	<string>https://github.com/Praepostor-IU9/IU9_Server/blob/master/Server/Semestr_1/Modul_1/06/main.c</string>
-</dict>
-</plist>
+
+#include <stdio.h>
+
+int main()
+{
+    long n, i, k, sum = 0, max = 0;
+    scanf("%li", &n);
+    long a[n];
+    for (i = 0; i < n; i++) scanf("%li", &a[i]);
+    scanf("%li", &k);
+    for (i = 0; i < k; i++) sum += a[i];
+    max = sum;
+    for (i = k; i < n; i++)
+    {
+        sum = sum - a[i-k] + a[i];
+        if (sum > max) max = sum;
+    }
+    printf("%li", max);
+    return 0;
+}

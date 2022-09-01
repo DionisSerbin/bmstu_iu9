@@ -1,8 +1,27 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>URL</key>
-	<string>https://github.com/Praepostor-IU9/IU9_Server/blob/master/Server/Semestr_1/Modul_1/07/main.c</string>
-</dict>
-</plist>
+
+#include <stdio.h>
+
+int main()
+{
+    long long n, i, j, m = 0, d;
+    scanf("%lli", &n);
+    n = abs(n);
+    d = sqrt(n);
+    char a[d];
+    for (i = 0; i <= d; i++) a[i] = 1;
+    a[1] = 0;
+    for (i = 2; i <= d; i++)
+        if (a[i])
+        {
+            for (j = i*i; j <= d; j += i)
+                a[j] = 0;
+            if (n % i == 0)
+            {
+                while (n % i == 0) n /= i;
+                if (i > m) m = i;
+            }
+        }
+    if (n > m) m = n;
+    printf("%lli", m);
+    return 0;
+}
