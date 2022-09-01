@@ -1,0 +1,8 @@
+dasd19213
+421674215 &H461418
+gfsa321415 12435 1351asfaf
+&Hwriteln writeln&H
+&H6241756198 dassaf
+PRINT        6198531568
+goto print &H5326523 safasf61784
+gosub GOSUB GOTO  432PRINT 21414352 fasgufas52418712 &H411
