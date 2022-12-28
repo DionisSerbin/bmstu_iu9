@@ -33,8 +33,8 @@ Computer subjects:
   Algorithms of bioinformatics  
   Numerical methods of linear algebra  
   Mobile development  
-  bioinformatics algorithms
-  theory of neural networks
+  Bioinformatics algorithms  
+  Theory of neural networks
     
 8 semester:  
   Optimization methods  
